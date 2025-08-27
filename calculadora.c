@@ -95,71 +95,122 @@ setlocale(LC_ALL, "pt_BR.UTF-8");
     }
      if(a==5){
        printf("Obrigada por usar a calculadora! Até a próxima.\n");
-       return 0;
-    }
 
+    }
 }
 
 int invalido(){
-     printf("Opção inválida. Para escolher uma opção utilize apenas números de 1 a 5.\n");
-        int n;
-        printf("Digite uma opção: ");
-        scanf("%d", &n);
-        if(1<=n && n<=5){
-            escolhas(n);
-        }
-        else{
-            invalido();
-        }
+   int n; 
+   
+   int s; 
+   
+   if (scanf("%d", &n) != 1){
+    s = 0;
+    while (getchar() != '\n');
+   }
+   else {
+    s = 1;
+   }
+   if(s==0){
+    invalido();
+   }
+   if(s==1){
+   if(n<1 || n>5){
+ invalido();
+   }
+   else{
+     escolhas(n);
+   }
+}
 }
 
 int sn(){
-     printf("Deseja realizar uma nova operação? (s/n)\n");
-        char c;
-        scanf(" %c", &c);
-        if(c == 115 || c == 110){
-        if (c == 115){
-    telainicial();
-    int n;  
-     scanf("%d", &n);
+   char n;
+    int s; 
+   
+   if (scanf("%c", &n) != 1){
+    s = 0;
+    while (getchar() != '\n');
+   }
+   else {
+    s = 1;
+   }
 
-    if(n>0 && n<6){
+   if(s==0){
+       printf("Opção inválida. Para escolher uma opção utilize apenas s para sim ou n para não. Selecione uma nova opção:\n");
+    invalido();
+   }
+   if(s==1){
+      if(n == 115){
+          telainicial();
+    int n; 
+    int a; 
+   
+   if (scanf("%d", &n) != 1){
+    a = 0;
+    while (getchar() != '\n');
+   }
+   else {
+    a = 1;
+   }
+
+   if(a==0){
+       printf("Opção inválida. Para escolher uma opção utilize apenas números de 1 a 5. Selecione uma nova opção:\n");
+    invalido();
+   }
+   if(a==1){
+      if(n>=1 && n<=5){
     escolhas(n);
-    }
-    else{
-        invalido();
-    }
+      }
+      else{
+          printf("Opção inválida. Para escolher uma opção utilize apenas números de 1 a 5. Selecione uma nova opção:\n");
+         invalido();
+      }
+   }
 
-    sn();
-    }
-    if( c == 110){
-                printf("Obrigada por utilizar a calculadora. Até a próxima!");
-        }
-    }
-        else{
-            printf("Opção inválida.\n");
-            sn();
-        }
+int sn();
+
+      }
+       if(n == 110){
+  printf("Muito obrigada por utilizar a calculadora! Até a próxima!");
+      }
+      else{
+         printf("Opção inválida. Para escolher uma opção utilize apenas s para sim ou n para não. Selecione uma nova opção:\n");
+         invalido();
+      }
+   }
 }
-
 int main(){
 
     setlocale(LC_ALL, "pt_BR.UTF-8");
 
     telainicial();
-    int n;  
-     scanf("%d", &n);
+    int n; 
+    int s; 
+   
+   if (scanf("%d", &n) != 1){
+    s = 0;
+    while (getchar() != '\n');
+   }
+   else {
+    s = 1;
+   }
 
-    if(n>0 && n<6){
+   if(s==0){
+       printf("Opção inválida. Para escolher uma opção utilize apenas números de 1 a 5. Selecione uma nova opção:\n");
+    invalido();
+   }
+   if(s==1){
+      if(n>=1 && n<=5){
     escolhas(n);
-    }
-    else{
-        invalido();
-    }
+      }
+      else{
+          printf("Opção inválida. Para escolher uma opção utilize apenas números de 1 a 5. Selecione uma nova opção:\n");
+         invalido();
+      }
+   }
 
-    if(n>= 1 && n<5){
-    sn();
-    }
+int sn();
 
     return 0;
 }
