@@ -168,7 +168,7 @@ int sn(){
       }
    }
 
-int sn();
+sn();
 
       }
        if(n == 110){
@@ -210,7 +210,7 @@ int main(){
       }
    }
 
-int sn();
+sn();
 
     return 0;
 }
