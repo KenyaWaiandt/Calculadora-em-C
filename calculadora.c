@@ -115,12 +115,12 @@ else {
     s = 1;
 }
 
-if (s=0){
+if (s==0){
     printf("Opção inválida. Utilize apenas números de 1 a 5.\n");
     inicial();
 }
 
-if(s=1){
+if(s==1){
     
     if(n>=1 && n<=4){
        escolhas (n);
@@ -210,3 +210,4 @@ if(i==2){
 }
 
 }
+
